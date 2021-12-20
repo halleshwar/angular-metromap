@@ -7,7 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   name = 'Angular';
-  public metro = [];
+  public metro = [{
+    stationName : "Delhi"
+  }];
   
   public metroClick(mapEvent) {
  
@@ -15,7 +17,7 @@ export class AppComponent  {
       this.metro.forEach(item => {
   
         if (this.metro.indexOf(item.stationName) !== -1) {
-          this.metro.push(item.stationName);
+          this.metro.push({stationName:item.stationName});
         } else {
           this.metro.splice(this.metro.indexOf(item.stationName), 1)  
         }
